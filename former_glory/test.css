@@ -1,0 +1,62 @@
+.additionalBut {
+    display: none;
+}
+body {
+    font-family: Monospace;
+    background-color: #212922;
+    margin: 0px;
+    
+}
+.customBut {
+    border-radius:50px;
+    float:right;
+    padding:0 5px;
+    margin-top:5px;
+}
+.customBut1 {
+    border-radius:50px;
+    display:none;
+    float:right;
+    padding:0 5px;
+    margin-top:5px;
+}
+p {
+    font-size:10px;
+}
+
+.form-group {
+    margin:0px;
+    padding:10px;
+    border-radius:10px;
+}
+#sidebar {
+    background-color: #bcabae;
+    width:300px;
+    height: 630px;
+    border: 1px solid #716969;
+    margin: 10px 10px 10px 0;
+    position: static; /* fixed or static */
+    top: 100px;
+    left: 100px;
+    float:left;
+    border-radius:10px;
+}
+#canvas {
+    background-color: #212922;
+    width: 900px;
+    height: 650px;
+    border: 1px solid #212922;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    position: static; /* fixed or static */
+    top: 0px;
+    left: 10px;
+    float: left;
+    border-radius:10px;
+}
+iframe {
+    width:900px;
+    height: 650px;
+    border-radius:10px;
+}
+

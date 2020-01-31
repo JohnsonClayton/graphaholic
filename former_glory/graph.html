@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>グラフ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <script type="text/javascript" src="js/three.min.js"></script>
+    <script type="text/javascript" src="js/CanvasRenderer.js"></script>
+    <script type="text/javascript" src="js/OrbitControls.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+</head>
+<body>
+    <div class="container">
+        
+    <div id="sidebar" class="container-fluid col-4">
+        <h1>Enter Equation(s) Here:</h1>
+        <p>Please enter them in the form of z = x's and y's. I am working on working bugs out.</p>
+         <div class="form-group container-fluid" style="background-color:#aef6c7;">
+           <label for="in1">1:</label>
+           <input type="text" class="form-control" id="in1">
+         </div>
+         <div class="form-group  additionalBut container-fluid" id="in20" style="background-color:#006daa;">
+           <label for="in2">2:</label>
+           <input type="text" class="form-control" id="in2">
+         </div>
+         <div class="form-group  additionalBut container-fluid" id="in30" style="background-color:#b9d6f2;">
+           <label for="in3">3:</label>
+           <input type="text" class="form-control" id="in3">
+         </div>
+         <div class="form-group  additionalBut container-fluid" id="in40" style="background-color:#a49e8d;">
+           <label for="in4">4:</label>
+           <input type="text" class="form-control" id="in4">
+         </div> 
+        <button id="addButton" class="btn btn-success customBut" type="button" onClick="addBox();">+</button>
+        <button id="removeButton" class="btn btn-danger customBut1" type="button" onClick="removeBox();">-</button>
+        <button id="grapher" class="btn-primary" type="button" onClick="letsGo();">Graph!</button>
+    </div>
+    
+    <div id="canvas" class="container-fluid col-8"><iframe id='graph' name='graph' scrolling='no' src="test.html"></iframe></div>
+    
+    </div>
+    <script>
+        counter = 0;
+        
+        function letsGo() {
+            document.getElementById('graph').contentWindow.location.reload();
+            
+            document.getElementById('graph').onload = function() {
+            var userInput = document.getElementById('in1').value;
+            window.frames['graph'].document.getElementById('test1').innerHTML = userInput;
+            userInput = document.getElementById('in2').value;
+            window.frames['graph'].document.getElementById('test2').innerHTML = userInput;
+            userInput = document.getElementById('in3').value;
+            window.frames['graph'].document.getElementById('test3').innerHTML = userInput;
+            userInput = document.getElementById('in4').value;
+            window.frames['graph'].document.getElementById('test4').innerHTML = userInput;
+            window.frames['graph'].graphMe();
+        }
+        }
+        function addBox() {
+            counter+=1;
+            switch(counter)
+            {
+                case(1):
+                    unHide("in20");
+                    unHide("removeButton");
+                    break;
+                case(2):
+                    unHide("in30");
+                    break;
+                case(3):
+                    unHide("in40");
+                    hide("addButton");
+                    break;
+                    
+            }
+        }
+        
+        function removeBox() {
+            switch(counter)
+            {
+                case(1):
+                    hide("in20");
+                    hide("removeButton");
+                    document.getElementById('in2').value = "";
+                    break;
+                case(2):
+                    hide("in30");
+                    document.getElementById('in3').value = "";
+                    break;
+                case(3):
+                    hide("in40");
+                    unHide("addButton");
+                    document.getElementById('in4').value = "";
+                    break;
+                    
+            }
+            counter-=1;
+        }
+        //var frames = window.frames['graph'].document.getElementById('test');
+        //frames += " And again!";
+        
+    </script>
+</body>
+</html>
