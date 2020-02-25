@@ -1,7 +1,6 @@
 import * as THREE from './three.module.js';
 
 export function graph() {
-  console.log('graph function reached!');  
 
   // Example provided from threejs.org
   var scene = new THREE.Scene();
@@ -28,4 +27,27 @@ export function graph() {
   };
 
   animate();
+  console.log('graph function reached!');  
+
+  var Fraction = algebra.Fraction;
+  var Expression = algebra.Expression;
+  var Equation = algebra.Equation;
+
+  var frac = new Fraction(1, 2);
+  console.log(frac.toString());
+
+  frac = frac.add(new Fraction(3, 4));
+  console.log(frac.toString());
+
+  frac = frac.subtract(2);
+  console.log(frac.toString());
+
+  frac = frac.multiply(new Fraction(4, 3));
+  console.log(frac.toString());
+
+  frac = frac.divide(5);
+  console.log(frac.toString());
+
+
+
 }
