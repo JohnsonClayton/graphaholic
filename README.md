@@ -10,9 +10,11 @@ The below javascript imports the libraries required for the animations.
 ```
 import * as THREE from './three.module.js';
 ```
-The module `three` is the ThreeJS library used for visualization. It can be installed through the following:
+The module `three` is the ThreeJS library (docs found [here](https://threejs.org/docs))used for visualization. It can be installed through the following:
 ```
 $ npm install three
 ```
 This will install the library to `~/.npm` by default (on Linux). I've made a soft-linked file in `graphaholic/js/three.module.js` to point at `~/.npm/.../build/three.module.js`. However, you could just as easily move the file to the local space.
 
+## Computer Algebra System (CAS)
+The CAS currently used is `algebra.js`, documentation found [here](http://algebra.js.org/). 
