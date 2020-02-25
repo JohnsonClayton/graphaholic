@@ -1,6 +1,7 @@
-import * as THREE from './three.module.js';
+//import * as THREE from './three.module.js';
 
-export function graph() {
+//export function graph() {
+function graph() {
 
   // Example provided from threejs.org
   var scene = new THREE.Scene();
@@ -48,6 +49,9 @@ export function graph() {
   frac = frac.divide(5);
   console.log(frac.toString());
 
-
-
+  console.log('CAS tested!');
 }
+
+window.onload = function() {
+  graph();
+};
