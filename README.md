@@ -10,7 +10,7 @@ The below javascript imports the library required for the animations.
 ```
 <script src='./js/three.min.js'></script>
 ```
-The module `three` is the ThreeJS library (docs found [here](https://threejs.org/docs))used for visualization. It can be installed through the following:
+The module `three` is the ThreeJS library (docs found [here](https://threejs.org/docs)) used for visualization. It can be installed through the following:
 ```
 $ curl https://threejs.org/build/three.min.js > three.min.js
 ```
